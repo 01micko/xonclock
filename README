@@ -1,0 +1,68 @@
+======================================================================
+                         xonclock-0.0.9.2 README file
+======================================================================
+
+About
+=====
+
+  xonclock is X on-screen analog clock displayer with assignable skins.
+Originally the program was written to work under the Window Maker 0.91.0
+windows manager.
+
+  I'm not the Linux programming guru so if you've found a bug don't swear at
+me but better fix it and give me a patch ;).
+
+  The project summary page can be found at
+http://sourceforge.net/projects/xonclock.
+
+Requirements
+============
+
+  * libpng-1.2.13 (http://www.libpng.org/)
+  * jpeg-6b (http://www.ijg.org/)
+  * tiff-3.8.2 (http://www.libtiff.org/)
+  * libXpm-3.5.5 (http://xorg.freedesktop.org/)
+  * make-3.80 (ftp://ftp.gnu.org/gnu/make/)
+  * gcc-3.3.2 (ftp://ftp.gnu.org/gnu/gcc/)
+  * XFree-4.3.0 (http://www.xfree.org/) or XOrg-6.8.2 (http://www.x.org/)
+    (with Xrender and Xshape extensions support)
+  * FreeType2-2.1.9 (http://freetype.sourceforge.net/)
+  * glibc with threads support (http://www.gnu.org/software/libc/)
+
+The full agreement with versions numbers of these packages aren't
+required I hope.
+
+Installation
+============
+
+  Type: configure, make and make install (as root for most cases).
+
+How to uninstall xonclock
+=========================
+
+Lets assume that we have xonclock installed with --prefix=/usr/local.
+To uninstall xonclock just type:
+	rm -f /usr/local/bin/xonclock
+	rm -f /usr/local/man/man1/xonclock.1
+	rm -dr /usr/local/share/xonclock
+That's all.
+
+Usage
+=====
+
+Usually xonclock is started with command-line options. See xonclock
+man page for details. Since version 0.0.8.1 the reading of
+$(HOME)/.xonclockrc configuration file is added.
+See src/xonclockrc-example for details.
+
+Warning
+=======
+
+  There is ABSOLUTELY NO WARRANTY for this program.
+
+Author
+======
+
+  (C) 2005-2007 Cyrill V. Gorcunov <gclion@mail.ru>.
+  The program may be freely distributed under the terms of
+  GNU General Public License.

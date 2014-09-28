@@ -1,0 +1,305 @@
+.\" -*- nroff -*-
+.\"
+.\"
+.\"
+.\" .PP
+.TH "xonclock" "1" "0.0.9.2" "(C) 2005-2007 Cyrill V. Gorcunov" ""
+.SH "NAME"
+xonclock \- simple X on\-screen analog clock
+.\"
+.\"
+.\"
+.PP
+.SH "SYNOPSIS"
+.B xonclock
+\fP[\fIOPTIONS\fP]
+.\"
+.\"
+.\"
+.PP
+.SH "DESCRIPTION"
+.\".PP
+Shows an analog clock on X screen
+.\"
+.\"
+.\"
+.PP
+.SH "OPTIONS"
+.TP
+\fB\-\-skin\fP=\fIFILE\fP
+This option tells \fBxonclock\fP which file to be used as a clock skin.
+\fBxonclock\fP can handle PNG, JPEG, TIFF, XPM images.
+By default it loads an \fIinternal skin\fP.
+.\"
+.\"
+.TP
+\fB\-\-position\fP=\fIPOSITION\fP
+This option defines the clock placement on X screen. It may be:
+\fBTOP\-LEFT\fP, \fBTOP\-CENTER\fP, \fBTOP\-RIGHT\fP, \fBMIDDLE\-LEFT\fP,
+\fBMIDDLE\-CENTER\fP, \fBMIDDLE\-RIGHT\fP, \fBBOTTOM\-LEFT\fP,
+\fBBOTTOM\-CENTER\fP, \fBBOTTOM\-RIGHT\fP. By default it set to
+\fIBOTTOM\-RIGHT\fP.
+.\"
+.\"
+.TP
+\fB\-\-offset\-v\fP=\fIOFFSET\fP
+This option defines vertical offset of the clock concerning its
+base placement. Positive offset will shift clock lower, negative \- upper.
+Default: \fI0\fP.
+.\"
+.\"
+.TP
+\fB\-\-offset\-h\fP=\fIOFFSET\fP
+This option defines horizontal offset of the clock concerning its
+base placement. Positive offset will shift clock right, negative \- left.
+Default: \fI0\fP.
+.\"
+.\"
+.TP
+\fB\-\-hour\-length\fP=\fILENGTH\fP
+This option defines length of the clock hour hand. It ought to be positive.
+Default: \fIautomatic\fP.
+.\"
+.\"
+.TP
+\fB\-\-hour\-width\fP=\fIWIDTH\fP
+This option defines width of the clock hour hand. It ought to be positive.
+Default: \fI4\fP.
+.\"
+.\"
+.TP
+\fB\-\-minute\-length\fP=\fILENGTH\fP
+This option defines length of the clock minute hand. It ought to be positive.
+Default: \fIautomatic\fP.
+.\"
+.\"
+.TP
+\fB\-\-minute\-width\fP=\fIWIDTH\fP
+This option defines width of the clock minute hand. It ought to be positive.
+Default: \fI3\fP.
+.\"
+.\"
+.TP
+\fB\-\-second\-length\fP=\fILENGTH\fP
+This option defines length of the clock second hand. It ought to be positive.
+Default: \fIautomatic\fP.
+.\"
+.\"
+.TP
+\fB\-\-second\-width\fP=\fIWIDTH\fP
+This option defines width of the clock second hand. It ought to be positive.
+Default: \fI1\fP.
+.\"
+.\"
+.TP
+\fB\-\-color\-hour\fP=\fIR/G/B/A\fP
+This option defines color of the clock hour hand. \fIR/G/B/A\fP are color
+components: \fI\fPR \- red, \fIG\fP \- green, \fIB\fP \- blue, \fIA\fP \- alpha
+(opacity). Each of them ought to be in 0...255 range.
+Default: \fI255/0/0/255\fP.
+.\"
+.\"
+.TP
+\fB\-\-color\-minute\fP=\fIR/G/B/A\fP
+This option defines color of the clock minute hand. \fIR/G/B/A\fP are color
+components: \fI\fPR \- red, \fIG\fP \- green, \fIB\fP \- blue, \fIA\fP \- alpha
+(opacity). Each of them ought to be in 0...255 range.
+Default: \fI0/255/0/255\fP.
+.\"
+.\"
+.TP
+\fB\-\-color\-second\fP=\fIR/G/B/A\fP
+This option defines color of the clock second hand. \fIR/G/B/A\fP are color
+components: \fI\fPR \- red, \fIG\fP \- green, \fIB\fP \- blue, \fIA\fP \- alpha
+(opacity). Each of them ought to be in 0...255 range.
+Default: \fI0/0/255/255\fP.
+.\"
+.\"
+.TP
+\fB\-\-hands\-rotation\-axis\fP=\fIX/Y\fP
+This option defines coordinates of the clock hands rotation axis concerning
+top left corner of a clock window. Usefull for nonrectangular clock skins.
+Default: \fIcenter of the clock skin rectangle\fP.
+.\"
+.\"
+.TP
+\fB\-\-overlap\fP=\fISIZE\fP
+This option defines length of the clock hands tails that overlaps thru
+center of the clock hands rotation axis.
+Default: \fI1/5 of the clock second hand length\fP.
+.\"
+.\"
+.TP
+\fB\-\-sleep\fP=\fISECONDS\fP
+This option defines startup sleep time. It useful if you start \fBxonclock\fP
+from your \fB~/.xinitrc\fP file (see \fBstartx\fP script manual page).
+Doing so you will prevent display connection error (it may ouccur if you start
+\fBxonclock\fP while your have no display created by X server).
+Default: \fI0\fP.
+.\"
+.\"
+.TP
+\fB\-\-top\fP
+Set the clock to be shown always on top. Your windows manager may ignore
+this request and the option may not work.
+Default: \fIno\fP.
+.\"
+.\"
+.TP
+\fB\-s\fP, \fB\-\-show\-seconds\fP
+Render the second hand.
+Default: \fIno\fP.
+.\"
+.\"
+.TP
+\fB\-d\fP, \fB\-\-show\-date\fP
+Render the date string. Default: \fIno\fP.
+.\"
+.\"
+.TP
+\fB\-\-date\-font\fP=\fIFONTNAME\fP
+This option defines a date string font. Detailed descrition of the font
+name format see in fontconfig library manual.
+Default: \fIfixed\-8\fP.
+.\"
+.\"
+.TP
+\fB\-\-date\-color\fP=\fIR/G/B/A\fP
+This option defines color of a date string. \fIR/G/B/A\fP are color
+components: \fI\fPR \- red, \fIG\fP \- green, \fIB\fP \- blue, \fIA\fP \- alpha
+(opacity). Each of them ought to be in 0...255 range.
+Default: \fI0/0/0/255\fP.
+.\"
+.\"
+.TP
+\fB\-\-date\-position\fP=\fIPOSITION\fP
+This option defines date string position on the clock. It may be:
+\fBTOP\-LEFT\fP, \fBTOP\-CENTER\fP, \fBTOP\-RIGHT\fP, \fBMIDDLE\-LEFT\fP,
+\fBMIDDLE\-CENTER\fP, \fBMIDDLE\-RIGHT\fP, \fBBOTTOM\-LEFT\fP,
+\fBBOTTOM\-CENTER\fP, \fBBOTTOM\-RIGHT\fP. By default it set to
+\fIMIDDLE\-CENTER\fP.
+.\"
+.\"
+.TP
+\fB\-\-date\-offset\-v\fP=\fIOFFSET\fP
+This option defines vertical offset of the date string concerning its
+base placement. Positive offset will shift it lower, negative \- upper.
+Default: \fI10\fP.
+.\"
+.\"
+.TP
+\fB\-\-date\-offset\-h\fP=\fIOFFSET\fP
+This option defines horizontal offset of the date string concerning its
+base placement. Positive offset will shift it right, negative \- left.
+Default: \fI0\fP.
+.\"
+.\"
+.TP
+\fB\-\-date\-format\fP=\fIFORMAT\fP
+This option defines format of the date string. Detailed description of
+the FORMAT may be found in strftime manual page (type man strftime).
+Default: \fI%G\-%m\-%d\fP.
+.\"
+.\"
+.TP
+\fB\-\-date\-clip\-format\fP=\fIFORMAT\fP
+This option defines format of the date string to be pasted into X clipboard.
+Note that program was tested with KDE 3.4.1 (KWrite, KEdit) so on other
+systems it may doesn't work. No multilanguage support are provided for a while.
+The date string will be copied into X clipboard on mouse left button click
+over the clock. Detailed description of the FORMAT may be found in strftime
+manual page (type man strftime). Default: \fI%G\-%m\-%d %H:%M:%S\fP.
+.\"
+.\"
+.TP
+\fB\-\-movable\fP
+Allows to move the clock with a mouse left button.
+Default: \fInot set\fP.
+.\"
+.\"
+.TP
+\fB\-\-use\-background\fP
+This option tells xonclock to merge clock skin with desktop root
+window background image allowing to render the skins with
+alpha channel. It does not work with XPM skins.
+Default: \fInot set\fP.
+.\"
+.\"
+.TP
+\fB\-\-remerge\-sleep\fP=\fIMICROSECOND\fP
+This option tells xonclock to sleep for \fIMICROSECOND\fP
+to be sure that any obscured window has been refreshed
+while retrieving new background. This option is useful if
+only \fB\-\-use\-background\fP is used.
+Default: \fI5000\fP.
+.\"
+.\"
+.TP
+\fB\-\-no\-winredirect\fP
+If the program is started under KDE or GNOME (and maybe someone else) the clock
+may get hidden state. Try to set this flag to prevent a such situation.
+It may help I hope.
+Default: \fInot set\fP.
+.\"
+.\"
+.TP
+\fB\-\-tz\-hour\fP=\fIVAL\fP
+This option allows to customize system time-zone settings.
+The hour value obtained from a system call will be calculated as
+hour's system value + \fIVAL\fP. The valid range is [-24;24].
+Default: \fI0\fP.
+.\"
+.\"
+.TP
+\fB\-\-tz\-minute\fP=\fIVAL\fP
+This option allows to customize system time-zone settings.
+The minute value obtained from a system call will be calculated as
+minute's system value + \fIVAL\fP. The valid range is [-60;60].
+Default: \fI0\fP.
+.\"
+.\"
+.TP
+\fB\-\-alpha\-threshold\fP=\fIVAL\fP
+This option defines alpha threshold value that allows to slightly
+tune up a clock skin with alpha channel. It is only affected if
+the option \fB\-\-use\-background\fP is not set.
+Default: \fI0\fP.
+.\"
+.\"
+.TP
+\fB\-v\fP, \fB\-\-version\fP
+Prints program version and exit.
+.\"
+.\"
+.TP
+\fB\-h\fP, \fB\-\-help\fP
+Display help and exit.
+.\"
+.\"
+.\"
+.PP
+.SH "EVENTS"
+.\"
+.IP "  - " 6
+You may copy date string into X clipboard with mouse left button
+single click on xonclock. It works if xonclock has been started
+with \fB\-\-show\-date\fP option only.
+.IP "  - " 6
+You may exit from xonclock with mouse right button \fBdouble click\fP.
+.IP "  - " 6
+You may remerge desktop root window background image and clock skin
+by mouse left button \fBdouble click\fP (it works if xonclock has been
+started with \fB\-\-use\-background\fP option only).
+.\"
+.\"
+.\"
+.PP
+.SH "AUTHOR"
+Written by Cyrill Gorcunov <gclion@mail.ru>. There is ABSOLUTELY
+NO WARRANTY for this program.
+.\"
+.\"
+.\"
+.PP
+.SH "COPYRIGHT"
+It may be freely distributed under the terms of GNU General Public License.

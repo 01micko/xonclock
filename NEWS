@@ -1,0 +1,167 @@
+version 0.0.9.3 (2007-09-16): N
+
+	o Added desktop detection, new source files pmdesktop.c, pmdesktop.h
+
+version 0.0.9.2 (2007-09-16): BF
+
+	o Fixed ignorance of time-zone customization (thru --tz-hour --tz-min options).
+
+version 0.0.9.1 (2007-08-11): N
+
+	o Added option "alpha-threshold" to more elegant handling
+	  the image with alpha channel over XShape extension.
+	o Fixed resolving the '~' sign at --skin option argument.
+
+version 0.0.9.0 (2007-08-04): N
+
+	o More intelligent reading of TIFF skins.
+	o A few additional skins were added.
+
+version 0.0.8.9 (2007-04-01): N
+
+	o Added ability to customize time-zone settings.
+
+version 0.0.8.8 (2007-03-01): BF
+
+	o The program may hang because of inappropriate
+	  signal handling. Fixed.
+
+version 0.0.8.7 (2007-03-01): BF
+
+	o The program was not able to deal with 16-bit depth
+	  display. Fixed.
+
+version 0.0.8.6 (2007-01-03): BF, N
+
+	o Removed useless remerging of clock skin with root window background
+	  on single mouse click (affected on clock skins with alpha channel
+	  and if xonclock was started with --use-background option).
+	o Added two new skins chrome-128.png and chrome-260.png. They
+	  are taken from http://www.kde-look.org
+
+version 0.0.8.5 (2006-12-18): BF,N
+
+	o The program tried to load TIFF files as PNG files. Fixed.
+	o Configuration file may be not found if the HOME env variable
+	  was ended by '/' symbol. Fixed.
+	o Added handling of a skin path started with '~'.
+	o Added ability to handle skins with alpha channel by using
+	  new '--use-background' option.
+
+version 0.0.8.4 (2006-12-10): EBF
+
+	o Removed dependency on Imlib2 library. Imlib2 was being
+	  catched with memory DoS on internal clock skin loading.
+	  So xonclock become to handle skin files by own thru
+	  graphical libraries: PNG, JPEG, TIFF, XPM.
+
+version 0.0.8.3 (2006-10-06): BF
+
+	o Fixed using of uninitialized variable that could lead
+	  to incorrect searching of xonclock configuration file.
+	  Many thanks to David Andrs!
+
+version 0.0.8.2 (2006-09-21): BF
+
+	o Fixed ignore of the following options in
+	  config file - 'skin', 'date-font',
+	  'date-format', 'date-clip-format'.
+
+version 0.0.8.1 (2006-09-20): BF,N
+
+	o Fixed free() call for NULL pointer if clock skin can't be loaded.
+	o Fixed possible sending of event to already destroyed window.
+	o Added support of reading of $(HOME)/.xonclockrc file.
+	o Added exit from the program on mouse right button double click.
+
+version 0.0.8.0 (2006-06-29): N
+
+	o The program is rewritten to use Imlib2 library instead of Imlib.
+	  It allow us to work properly with XWindow Composite extension
+	  enabled.
+
+version 0.0.7.9 (2006-03-11): N
+
+	o Added ability to move the clock with a mouse.
+
+version 0.0.7.8 (2005-12-13): N
+
+	o Added copying of a date string into X clipboard on mouse
+	  left button click over the clock.
+	o New option added "--date-clip-format".
+
+version 0.0.7.6 (2005-12-01): BF
+
+	o Fixed default format of a date string. Now the date string
+	  is really shown with leading zeros.
+
+version 0.0.7.5 (2005-11-30): BF,N
+
+	o New default clock skin. It's taken from kxdocker-gaclock-0.7
+	  KXDocker plugin (GPL). KXDocker is XIAProjects product
+	  (http://www.xiaprojects.com).
+	o Added drawing of clock hands heads.
+	o Default format of a date string is changed to show leading
+	  zeros.
+	o Fixed drawing of invalid date string if there was an error
+	  in strftime system function.
+	o Added compability with BSD-based systems. Thanks to Sam
+	  Sirlin and Gabor Z. Papp.
+	o Configuration script is fully rewritten. Now the program may
+	  be built even the system libraries are placed in unusual
+	  directories by more elegant handling of LDFLAGS and LIBS
+	  variables.
+
+version 0.0.7 (2005-10-08): N
+
+	o The program register Xonclock/xonclock WM_CLASS window
+	  property so windows manager may capture the creation of
+	  xonclock window and do (or do not) something. Thanks to
+	  Gabor Z. Papp.
+
+version 0.0.6 (2005-09-17): N
+
+	o New option added "--overlap". Thanks to Michael Katzmann for
+	  advice.
+	o New option added "--top".
+	o New default clock skin.
+	o New default colors of the clock hands.
+
+version 0.0.5 (2005-05-29): BF
+
+	o Fixed incorrect handling of Y coordinate in argument of
+	  "--hands-rotation-axis" option.
+
+version 0.0.4 (2005-05-29): N
+
+	o Added customization of the clock hands rotation axis position
+	  by new "--hands-rotation-axis" option.
+
+version 0.0.3 (2005-05-22): BF,N
+
+	o Clock was invisible under KDE-3.2.1. Use new "--no-winredirect"
+	  option.
+	o Update date string if day, month or year is changed while the
+	  program is working.
+	o More safety exit on a signal.
+
+version 0.0.2 (2005-05-21): BF,N
+
+	o Fixed program freezing if SIGTERM (Ctrl+C) have came at
+	  unhappy moment (while clock cache is within a critical state
+	  and the system hold it there).
+	o Added date string renedering.
+
+version 0.0.1 (2005-05-18):
+
+	o First public release.
+
+
+------- Legend -----------------
+
+	BF - bugs fixed
+	N  - something new added
+	C  - code cleanup
+	EBF- external bugs fixed (bugs are in external apps that xonclock uses)
+
+--------------------------------
