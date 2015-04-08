@@ -1,4 +1,8 @@
-version 0.0.9.3 (2007-09-16): N
+version 0.0.9.3 (2015-04-08): MA
+
+	o Bugfix for compiling agaist libpng > 1.0.6
+
+version 0.0.9.3 (2014-09-28): MA
 
 	o Added desktop detection, new source files pmdesktop.c, pmdesktop.h
 
