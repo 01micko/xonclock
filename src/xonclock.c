@@ -186,6 +186,7 @@ int main(int argc, char * argv[])
 	/* some X stuff */
 	Screen *screen = NULL;
 	int screen_num;
+	XInitThreads();
 	XSetWindowAttributes wins_attribs = {};
 	XWindowAttributes win_attribs = {};
 	unsigned int width = 0, height = 0;	/* clock window sizes */
